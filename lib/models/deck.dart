@@ -1,33 +1,33 @@
 class Deck{
-  int _idDeck;
-  String _name;
+  int _id_deck;
+  String _nameDeck;
 
-  Deck(this._idDeck, this._name);
+  Deck(this._id_deck, this._nameDeck);
 
-  String get name => _name;
+  String get nameDeck => _nameDeck;
 
-  int get idDeck => _idDeck;
+  int get id_deck => _id_deck;
 
-  set name(String value) {
-    _name = value;
+  set nameDeck(String value) {
+    _nameDeck = value;
   }
 
-  set idDeck(int value) {
-    _idDeck = value;
+  set id_deck(int value) {
+    _id_deck = value;
   }
 
   Map <String, dynamic> toMap(){
     var map = Map<String, dynamic>();
-    map['idDeck'] =_idDeck;
-    map['name'] = _name;
+    map['id_deck'] =_id_deck;
+    map['nameDeck'] = _nameDeck;
 
     return map;
   }
 
   Deck.fromMapObject(Map<String, dynamic> map)
   {
-    this._idDeck=map['idDeck'];
-    this._name=map['name'];
+    this._id_deck=map['id_deck'];
+    this._nameDeck=map['nameDeck'];
   }
 
 }

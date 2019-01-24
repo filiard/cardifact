@@ -5,21 +5,21 @@ import 'cardDetail.dart';
 import 'dart:async';
 import 'package:sqflite/sqflite.dart';
 
-class DeckCreation extends StatefulWidget{
-
+class DeckCreation extends StatefulWidget {
   @override
-  State<StatefulWidget> createState(){
+  State<StatefulWidget> createState() {
     return DeckCreationState();
   }
-
 }
 
-class DeckCreationState extends State<DeckCreation>{
+class DeckCreationState extends State<DeckCreation> {
   @override
-  Widget build(BuildContext context){
+  Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(backgroundColor: Colors.teal[800], title: Text("Nowa talia"),),
-      body: Text("asdasds")
-    );
+        appBar: AppBar(
+          backgroundColor: Colors.teal[800],
+          title: Text("Nowa talia"),
+        ),
+        body: Text("tekstteksttekst"));
   }
 }

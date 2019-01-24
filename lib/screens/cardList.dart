@@ -42,14 +42,14 @@ class GameCardListState extends State<GameCardList> {
       updateGridView();
     }
 
-    TextStyle titleStyle = Theme.of(context).textTheme.subhead;
+
     var gv = new GridView.builder(
       itemCount: count,
       gridDelegate:
           new SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 3),
       itemBuilder: (BuildContext context, int index) {
         return new GestureDetector(
-          child: new Card(
+          child: Card(
             elevation: 5.0,
             child: GridTile(
               header: new GridTileBar(
@@ -87,15 +87,7 @@ class GameCardListState extends State<GameCardList> {
       appBar: AppBar(
         title: Text("Lista kart"),
         backgroundColor: Colors.indigo[800],
-        actions: <Widget>[
-          IconButton(
-            icon: Icon(Icons.ac_unit),
-            onPressed: () {
-              dbProvider.dajQuery("CREATE TABLE IF NOT EXISTS decks (id_deck INTEGER PRIMARY KEY, name TEXT)");
-              debugPrint("Ikonka");
-            },
-          ),
-        ],
+
       ),
       drawer: Drawer(
           child: ListView(

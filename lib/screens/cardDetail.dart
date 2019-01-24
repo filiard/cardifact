@@ -27,8 +27,10 @@ class CardDetailState extends State<CardDetail> {
   Widget build(BuildContext context) {
     // TODO: implement build
     return new Scaffold(
-        appBar: AppBar(title: Text(gameCard.name)),
-        //backgroundColor: Colors.yellowAccent,
+        appBar: AppBar(
+          title: Text(gameCard.name),
+          backgroundColor: Colors.indigo[800],
+        ),
         body: Padding(
             padding: EdgeInsets.only(top: 10, left: 10, right: 10),
             child: ListView(
@@ -43,9 +45,9 @@ class CardDetailState extends State<CardDetail> {
                           scale: 2,
                         ),
                       ),
-                      //onTap: () => navigateToZoom(this.gameCard),
-                      onTap: (){
-                        Navigator.push(context, MaterialPageRoute(builder: (context) {
+                      onTap: () {
+                        Navigator.push(context,
+                            MaterialPageRoute(builder: (context) {
                           return CardZoom(gameCard);
                         }));
                       },
@@ -144,7 +146,10 @@ class CardDetailState extends State<CardDetail> {
                     ],
                   ),
                 ),
-                Text("Opis: " + gameCard.description),
+                Text(
+                  "Opis: " + gameCard.description,
+                  style: TextStyle(fontSize: 17),
+                ),
               ],
             )));
   }

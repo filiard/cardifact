@@ -21,7 +21,7 @@ class DecksListState extends State<DecksList> {
   Widget build(BuildContext context) {
     if (decksList == null) {
       decksList = List<Deck>();
-      updateListView();
+      //updateListView();
     }
 
     return new Scaffold(
@@ -35,7 +35,7 @@ class DecksListState extends State<DecksList> {
           child: Icon(Icons.create),
           backgroundColor: Colors.teal,
           onPressed: () {
-            createNew();
+            //createNew();
             debugPrint("FAB");
           }),
     );
@@ -52,9 +52,8 @@ class DecksListState extends State<DecksList> {
                 leading: Icon(Icons.view_array),
                 onTap: () {
                   debugPrint("klik na deck");
-
                 },
-                title: new Text(this.decksList[index].name),
+                title: new Text("placeholder"),
               ));
         });
   }
@@ -67,18 +66,15 @@ class DecksListState extends State<DecksList> {
   }
 
   void updateListView() {
-
-    final Future <Database> dbFuture = dbProvider.initDecksDB();
-    dbFuture.then((database)
-    {
-     Future<List<Deck>> deckListFuture = dbProvider.getDeckList();
-     deckListFuture.then((decksList) {
-       setState((){
-         this.decksList=decksList;
-         this.count=decksList.length;
-       });
-     });
+    final Future<Database> dbFuture = dbProvider.initDecksDB();
+    dbFuture.then((database) {
+      Future<List<Deck>> deckListFuture = dbProvider.getDeckList();
+      deckListFuture.then((decksList) {
+        setState(() {
+          this.decksList = decksList;
+          this.count = decksList.length;
+        });
+      });
     });
-
   }
 }
